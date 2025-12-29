@@ -31,7 +31,6 @@ function App() {
         <h1 className="text-3xl text-slate-100 font-bold text-center">
           Task Manager
         </h1>
-        <AddTask />
         <Tasks tasks={tasks} />
       </div>
     </div>

@@ -1,5 +1,11 @@
 function Tasks(props) {
-  return <h1>{props.tasks[0].title}</h1>;
+  return (
+    <h1>
+      {props.tasks.map((task) => (
+        <p>{task.title}</p>
+      ))}
+    </h1>
+  );
 }
 
 export default Tasks;
