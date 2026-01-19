@@ -4,6 +4,7 @@ import AddTask from "./components/AddTask";
 import { useEffect, useState } from "react";
 import { v4 } from "uuid";
 import Title from "./components/Title";
+import Test from "./components/Test";
 
 function App() {
   const [tasks, setTasks] = useState(
@@ -15,17 +16,17 @@ function App() {
   }, [tasks]);
 
   useEffect(() => {
-    const fetchTasks = async () => {
-      const response = await fetch(
-        "https://jsonplaceholder.typicode.com/todos?_limit=10",
-        {
-          method: "GET",
-        }
-      );
-      const data = await response.json();
-      setTasks(data);
-    };
-    fetchTasks();
+    // const fetchTasks = async () => {
+    //   const response = await fetch(
+    //     "https://jsonplaceholder.typicode.com/todos?_limit=10",
+    //     {
+    //       method: "GET",
+    //     }
+    //   );
+    //   const data = await response.json();
+    //   setTasks(data);
+    // };
+    // fetchTasks();
   }, []);
 
   function onTaskClick(taskId) {
@@ -57,6 +58,7 @@ function App() {
   return (
     <div className="w-screen h-screen bg-slate-500 flex justify-center p-6">
       <div className="w-[500px] space-y-4">
+        <Test></Test>
         <Title>Gerenciador de Tarefas</Title>
         <AddTask onAddTaskSubmit={onAddTaskSubmit} />
         <Tasks
